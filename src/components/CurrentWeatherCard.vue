@@ -17,7 +17,7 @@
           depressed
           color="#4DBA87"
           title="Refresh"
-          @click="getWeatherData, (alert = true), hide_alert()"
+          @click="getWeatherData(), (alert = true), hide_alert()"
         >
           <v-icon>mdi-refresh</v-icon>
         </v-btn>
@@ -28,7 +28,7 @@
       color="blue"
       type="info"
       text
-      transition="scroll-x-reverse-transition"
+      transition="slide-y-transition"
       >Les données ont bien été mises à jour.</v-alert
     >
     <v-card-text>
