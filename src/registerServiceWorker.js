@@ -1,30 +1,28 @@
 import { register } from "register-service-worker";
 
-register(`${process.env.BASE_URL}service-worker.js`, {
+register("/service-worker.js", {
+  registrationOptions: { scope: "./" },
   ready() {
-    throw new Error(
-      "App is being served from cache by a service worker.\n" +
-        "For more details, visit https://goo.gl/AFskqB"
-    );
+    console.log("Service worker is active.");
   },
   registered() {
-    throw new Error("Service worker has been registered.");
+    console.log("Service worker has been registered.");
   },
   cached() {
-    throw new Error("Content has been cached for offline use.");
+    console.log("Content has been cached for offline use.");
   },
   updatefound() {
-    throw new Error("New content is downloading.");
+    console.log("New content is downloading.");
   },
   updated() {
-    throw new Error("New content is available; please refresh.");
+    console.log("New content is available; please refresh.");
   },
   offline() {
-    throw new Error(
+    console.log(
       "No internet connection found. App is running in offline mode."
     );
   },
   error(error) {
-    throw new Error("Error during service worker registration:", error);
+    console.error("Error during service worker registration:", error);
   },
 });
