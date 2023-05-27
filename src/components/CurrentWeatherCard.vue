@@ -122,7 +122,7 @@ export default {
   methods: {
     getWeatherData() {
       weatherService.getCurrentWeather().then((response) => {
-        this.weather = response.data;
+        this.weather = response;
       });
     },
 
